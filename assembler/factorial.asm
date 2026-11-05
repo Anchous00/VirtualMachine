@@ -1,0 +1,29 @@
+IN ; [2] - factorial; AX - N
+POP AX
+PUSH 1
+POP [2]
+CALL :FACT
+
+PUSH [2]
+OUT
+HALT
+
+
+:FACT
+PUSH AX
+PUSH 1
+JE :RET
+
+PUSH AX
+PUSH [2]
+MUL
+POP [2]
+
+PUSH 1
+PUSH AX
+SUB
+POP AX
+
+CALL :FACT
+:RET
+RET

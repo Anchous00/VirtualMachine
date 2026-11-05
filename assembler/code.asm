@@ -1,0 +1,8 @@
+CALL :Z
+OUT
+
+HALT
+
+:Z
+PUSH 1
+RET
